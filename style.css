@@ -17,4 +17,7 @@
 
 .dress-illustration{width:100%;max-width:430px;justify-self:center}.dress-illustration img{width:100%;height:auto}@media(max-width:650px){.dress-illustration{max-width:340px}}
 
+/* Final dress-code editorial */
+.dress-editorial{grid-template-columns:1fr;gap:25px}.dress-copy{max-width:760px}.dress-copy>p{max-width:700px}.dress-illustration{max-width:none;width:100%;border:1px solid var(--line);background:#faf7ef}.dress-illustration img{width:100%;height:auto}.dress-accept{padding:16px 0;border-top:1px solid var(--line);margin-top:20px}.dress-accept a{text-decoration:underline;text-underline-offset:3px}.shared-tools{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}@media(max-width:650px){.dress-editorial{gap:18px}.dress-illustration{max-width:100%}.shared-tools>*{width:100%;justify-content:center}}
+
 .preview-bar{flex-wrap:wrap;gap:12px}.preview-bar span{flex:1}.preview-bar a{white-space:nowrap}.demo-note{padding:15px 6vw;background:#e8e2d8;font-size:12px;text-align:center}.studio [disabled]{opacity:.65;cursor:default}@media(max-width:650px){.preview-bar span{flex-basis:100%}.preview-bar{justify-content:center}.demo-note{font-size:10px}}
