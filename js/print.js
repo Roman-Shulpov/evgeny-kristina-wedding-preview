@@ -7,7 +7,7 @@ $('#print-button').addEventListener('click',()=>window.print());
  const s=data.settings;
  $('#print-greeting').textContent=data.invitation?.title||'Дорогие наши!';$('#print-intro').textContent=s.intro;
  $('#print-venue').textContent=[s.time?`Сбор гостей в ${s.time}`:'',s.venue,s.address].filter(Boolean).join('\n')||'Место и время сообщим дополнительно.';
- $('#print-contact').textContent=s.contact;
+ $('#print-contact').textContent=s.contact;$('#print-wishes').textContent=s.wishes||'';
  $('#print-schedule').textContent=s.schedule.split('\n').filter(Boolean).map(line=>line.replace('|','—')).join('\n');
  if(s.rsvp_deadline)$('#print-deadline').textContent=`Будем благодарны за ответ до ${new Date(s.rsvp_deadline+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'})}.`;
  if(s.schedule.split('\n').filter(Boolean).length>3)document.body.classList.add('compact-print');
