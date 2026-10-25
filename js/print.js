@@ -6,6 +6,7 @@ $('#print-button').addEventListener('click',()=>window.print());
  const response=await fetch('./preview-data.json');
  const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось загрузить приглашение.');
  const s=data.settings;
+ const deadline=$('#print-deadline');deadline.hidden=!s.rsvp_deadline;if(s.rsvp_deadline)deadline.textContent='Пожалуйста, ответьте до '+new Date(s.rsvp_deadline+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'})+'.';
  $('#print-greeting').textContent=data.invitation?.title||'Дорогие наши!';
  await document.fonts.ready;
  const greeting=$('#print-greeting');
@@ -14,7 +15,6 @@ $('#print-button').addEventListener('click',()=>window.print());
  $('#print-dress').textContent='Дресс-код: '+s.dress_code.replace(/Примеры образов[^.]*\.?/g,'').trim();
  $('#print-contact').textContent=s.contact;$('#print-wishes').textContent=s.wishes||'';
  $('#print-schedule').textContent=s.schedule.split('\n').filter(Boolean).map(line=>line.replace('|','—')).join('\n');
- if(s.rsvp_deadline)$('#print-deadline').textContent=`Будем благодарны за ответ до ${new Date(s.rsvp_deadline+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'})}.`;
  if(s.schedule.split('\n').filter(Boolean).length>3)document.body.classList.add('compact-print');
  if(!token){$('#print-warning').textContent='Выберите гостя в студии → «Ссылка и QR» → «Персональная открытка». Этот макет без персонального QR.';}
  if(false){
