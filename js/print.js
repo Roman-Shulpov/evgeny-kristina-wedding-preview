@@ -6,6 +6,7 @@ $('#print-button').addEventListener('click',()=>window.print());
  const response=await fetch('./preview-data.json');
  const data=await response.json();if(!response.ok)throw new Error(data.error||'Не удалось загрузить приглашение.');
  const s=data.settings;
+ $('.print-photo').src='./assets/couple-print.jpg';
  const deadline=$('#print-deadline');deadline.hidden=!s.rsvp_deadline;if(s.rsvp_deadline)deadline.textContent='Пожалуйста, ответьте до '+new Date(s.rsvp_deadline+'T12:00:00').toLocaleDateString('ru-RU',{day:'numeric',month:'long'})+'.';
  $('#print-greeting').textContent=data.invitation?.title||'Дорогие наши!';
  await document.fonts.ready;
