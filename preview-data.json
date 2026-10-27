@@ -21,6 +21,13 @@
     "rsvp_deadline": "2026-11-12",
     "closing": "С любовью, Евгений и Кристина",
     "wishes": "",
-    "photo_exposure": "0.6"
+    "photo_exposure": "0.6",
+    "drinks_enabled": "1",
+    "drinks_required": "0",
+    "drinks_multiple": "1",
+    "drinks_title": "Что будете пить?",
+    "drinks_hint": "Помогите нам подобрать напитки к вашему столу.",
+    "drinks_options": "Вино белое\nВино красное\nВодка\nВиски\nШампанское",
+    "drinks_none_label": "Не пью алкоголь"
   }
 }
